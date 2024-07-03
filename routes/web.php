@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [NameController::class, "home"])->name("home");
+Route::get('/all', [NameController::class, "all"])->name("all");
