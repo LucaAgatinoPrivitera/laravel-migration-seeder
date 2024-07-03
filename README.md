@@ -48,6 +48,8 @@ Da chiedere:
 	Per clonare devo usare git clone https://github.com/LucaAgatinoPrivitera/laravel-template ma se invece non volessi avere la cartella dentro la cartella?
 	Nei controller e treni, use App\Models\Train; Train sta per il nome del file giusto?
 		class Train invece è il nome della classe che poi devo usare in $trains = Train::all(); giusto?
+	
+	php artisan db:seed --class=DatabaseSeeder non mi trova il campo Azienda
 
 
 
