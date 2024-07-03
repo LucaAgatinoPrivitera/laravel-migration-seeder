@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Dati da "config/data.php": {{ $home }}</h1>
-<p>This is my paragraph content.</p>
-<button class="btn btn-primary">Cliccami</button>
+@foreach ($trains as $treno)
+    <h4>Ciao il treno parte da: {{ $treno['Stazione di partenza']}} alle ore: {{ $treno['Orario di partenza']}}</h4> <h4 style="margin-bottom: 4rem">Arriva: {{ $treno['Stazione di arrivo']}} alle ore: {{ $treno['Orario di arrivo']}} </h4>
+    
+@endforeach
 @endsection

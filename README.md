@@ -44,30 +44,44 @@ Questo git-template fornisce lo scaffold di una web application realizzata con L
 - Puntare il browser all'indirizzo mostrato in terminale per controllare che tutto funzioni.
 
 
-:pacco: CONSEGNA
-Creare un progetto basandoci su uno Scaffold più avanzato. Questo progetto dovrà collegarsi ad un database per recuperare alcuni dati.
-
-:razzo: COME AVVIARE IL PROGETTO
-Create una vostra repo laravel-model-controller a partire dal mio template: con boostrap o senza bootstrap.
-Seguite i passaggi descritti nel readme.md della mia repo per configurare ed avviare tutto.
-Poi ricordatevi di avviare il progetto usando i DUE terminali.
-
-:data-trek: COME PREDISPORRE I DATI
-Tramite phpMyAdmin create un nuovo database laravel_model_controller
-Importate in questo database il dump che trovate in allegato.
-
-:pergamena: COME PROCEDERE
-Assicuratevi di avere le corrette credenziali nella sezione database del file .ENV (incluso il nome del DB).
-Create un model Movie
-php artisan make:model Movie
-Create un controller che gestirà la rotta "/"
-php artisan make:controller Guest/PageController
-All’interno della funzione index() del controller, recuperate tutti i film dal database e passateli alla view, che quindi li visualizzerà a schermo.
-
-:regalo: BONUS
-Provate a creare più rotte, ad esempio una rotta "/" con un breve paragrafo di benvenuto e poi una rotta "/movies" con la lista dei film.
-Avrete bisogno di due rotte, due metodi nel controller e due viste!
-
-
 Da chiedere: 
-	ma devo usare il server del  npm run dev o dell'artisan serve? quest'ultimo non ha css
+	Per clonare devo usare git clone https://github.com/LucaAgatinoPrivitera/laravel-template ma se invece non volessi avere la cartella dentro la cartella?
+	Nei controller e treni, use App\Models\Train; Train sta per il nome del file giusto?
+		class Train invece è il nome della classe che poi devo usare in $trains = Train::all(); giusto?
+
+
+
+
+CONSEGNA
+Creare un'applicazione laravel dotata di migrazione e seeder per creare e popolare una tabella di test.
+
+PREPARAZIONE
+Create la repo partendo dal template.
+Create un database relativo all'app su phpMyAdmin.
+Impostate i dati del DB sul file di environment.
+
+MIGRATION
+Creiamo la Migration per la tabella trains. Ogni treno dovrà avere:
+Azienda
+Stazione di partenza
+Stazione di arrivo
+Orario di partenza
+Orario di arrivo
+Codice Treno
+Numero Carrozze
+In orario
+Cancellato
+Potrebbero essere necessarie altre colonne per far funzionare la tabella nel modo corretto... :occhiolino:
+Lanciate la migration per creare la tabella. In caso di problemi:
+php artisan migrate:reset
+Modificate la migration e la lanciate nuovamente con
+php artisan migrate
+
+MVC
+Inserite per ora i dati nella tabella tramite PhpMyAdmin. Basteranno 2 treni di prova.
+Ora create Model e Controller per mostrare nella home page tutti i treni che sono in partenza dalla data odierna, un pò come abbiamo fatto ieri.
+Il giro completo sarà sempre: Route -> Controller che usa Model e passa i dati a -> View che stampa
+
+SEEDER
+Aggiungete ora un seeder che popoli la tabella.
+Provate ad aggiungere un record a mano, poi divertitevi con un ciclo e FakerPHP.
