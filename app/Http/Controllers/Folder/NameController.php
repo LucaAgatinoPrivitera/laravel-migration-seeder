@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Folder;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Train;
+// Presumo che la classe carbon indichi il date time
 use Carbon\Carbon;
 
 class NameController extends Controller
