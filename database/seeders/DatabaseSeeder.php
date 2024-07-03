@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
     public function run(Faker $faker): void{
         for ($i=0; $i < 5 ; $i++) { 
             $treno = new Train();
-            $treno->Azienda = $faker->Azienda;
+            $treno->Azienda = $faker->company;
             /* OPS per non rimodificare il db stampo solamente tante aziende
             $treno->Azienda = $faker->Stazione di partenza;
             $treno->Azienda = $faker->Azienda;
